@@ -1,2 +1,63 @@
-<p>home works!</p>
-<button class="btn btn-danger">boton boostrap</button>
+
+    <h1>INDICADORES</h1>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mobile">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let inside of insides">
+                    <div class="row " (click)="getDataInsideOfMonth(inside)">
+                        <div class="col-12 ">
+                            <div class="row datosIndicador">
+                                <div class="col-8">
+                                    <p class="datosIndicadorNombre" > {{inside.nombre}}</p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="datosIndicadorValor">{{inside.valor}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 listGroupUnidad">
+                            <div class="row">
+                                <div class="col-8">
+                                    <p>Unidad de medida : <span>{{inside.unidad_medida}}</span></p>
+                                </div>
+                               <!--  <div class="col-4 buttonActions">
+                                    <div class="row">
+                                        <div class="col-6 button buttonForMonth" >
+                                            <p>Mes</p>
+                                        </div>
+                                        <div class="col-6 button buttonForYear">
+                                            <p>Año</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 desktop">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Unidad de medida</th>
+                    <th scope="col">Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let inside of insides; let i = index" (click)="getDataInsideOfMonth(inside)">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{inside.codigo}}</td>
+                    <td>{{inside.fecha}}</td>
+                    <td>{{inside.nombre}}</td>
+                    <td>{{inside.unidad_medida}}</td>
+                    <td>{{inside.valor}}</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+

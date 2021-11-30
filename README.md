@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## componentes adicionales
+
+Se instalo angular material para complementar algunas funciones como iconos adicionales
+
+se agrego un paginador [ngx-pagination](https://michaelbromley.github.io/ngx-pagination/#/), que tiene resuelta la funcionalidad de paginación, igual se podría haber trabajado manualmente.
+
+Se agrego firebase a el proyecto en este caso es solo para usar el hosting

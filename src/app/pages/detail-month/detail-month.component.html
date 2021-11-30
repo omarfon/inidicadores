@@ -1,0 +1,43 @@
+<div class="container-fluid">
+<h2>{{dataMonth.nombre}}</h2>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mobile">
+                <ul class="list-group">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6" *ngFor="let d of dataMonth.serie ">
+                        <li class="list-group-item" > 
+                            <div class="row datosIndicador">
+                                <div class="col-8">
+                                    <p class="dateOfMonth"> {{d.fecha | date:'d MMM, y'}}</p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="valueOfDate">{{d.valor}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 desktop">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let d of dataMonth.serie| paginate: { itemsPerPage: 15, currentPage: p } ; let i = index ">
+                        <th scope="row">{{i + 1}}</th>
+                        <td>{{d.fecha | date:'d MMM, y'}}</td>
+                        <td>{{dataMonth.unidad_medida}}</td>
+                        <td>{{d.valor}}</td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+</div>
+
